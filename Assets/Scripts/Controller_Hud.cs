@@ -9,7 +9,7 @@ public class Controller_Hud : MonoBehaviour
     private float distance = 0;
     private int ArreglarDistancia;
     
-    void Start()
+    void Start() 
     {
         gameOver = false;
         distance = 0;
