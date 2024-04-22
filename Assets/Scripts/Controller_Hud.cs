@@ -7,7 +7,8 @@ public class Controller_Hud : MonoBehaviour
     public Text distanceText;
     public Text gameOverText;
     private float distance = 0;
-
+    private int ArreglarDistancia;
+    
     void Start()
     {
         gameOver = false;
@@ -15,19 +16,19 @@ public class Controller_Hud : MonoBehaviour
         distanceText.text = distance.ToString();
         gameOverText.gameObject.SetActive(false);
     }
-
     void Update()
     {
-        if (gameOver)
+        if (gameOver)   /// Si se activa el game over basicamente sale el texto burlandose que puse, te dice tu distancia recorrida y nada mas.
         {
             Time.timeScale = 0;
-            gameOverText.text = "Game Over \n Total Distance: " + distance.ToString();
+            gameOverText.text = "Skill Issue \n Total Distance: " + ArreglarDistancia.ToString();
             gameOverText.gameObject.SetActive(true);
         }
-        else
+        else /// si NO se activa el game over se sigue aumentando tu distancia
         {
             distance += Time.deltaTime;
-            distanceText.text = distance.ToString();
+            ArreglarDistancia = ArreglarDistancia = (int)distance;
+            distanceText.text = ArreglarDistancia.ToString();
         }
     }
 }

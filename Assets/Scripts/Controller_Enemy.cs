@@ -16,7 +16,7 @@ public class Controller_Enemy : MonoBehaviour
         OutOfBounds();
     }
 
-    public void OutOfBounds()
+    public void OutOfBounds()  /// Si el enemigo se va como muy osea onda muy lejitos se elimina el objeto
     {
         if (this.transform.position.x <= -15)
         {
